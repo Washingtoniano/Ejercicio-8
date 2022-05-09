@@ -7,6 +7,7 @@ class conjunto():
         nuevo=self.__indice+other.__indice
         for i in range (len(self.__indice)):
             band=True
+            mo=None
             for j in range (len (other.__indice)):
                 if (self.__indice[i]==other.__indice[j]):
                     mo=int(self.__indice[i])
