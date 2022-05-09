@@ -5,7 +5,6 @@ class num():
     def __add__(self, other):
         nuevo=[]
         band=False
-        new=int
         for i in range (len(self.__numeros)):
             for j in range(len (other.__numeros)):
                if self.__numeros[i]==other.__numeros[j]:

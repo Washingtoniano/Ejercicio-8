@@ -4,14 +4,12 @@ class conjunto():
     def __init__(self):
         self.__indice=[]
     def __add__(self, other):
-        nuevo=self.__indice+other.__indice
-        for i in range (len(self.__indice)):
-            band=True
-            mo=None
-            for j in range (len (other.__indice)):
-                if (self.__indice[i]==other.__indice[j]):
-                    mo=int(self.__indice[i])
-                    nuevo.remove(mo)
+        self.__indice.sort()
+        other.__indice.sort()
+        nuevo=self.__indice
+        for objeto in other.__indice:
+            if objeto not in nuevo:
+                nuevo.append(objeto)
         return (nuevo)
     def agregar (self,va):
         self.__indice.append(va)
@@ -34,18 +32,13 @@ class conjunto():
         else:
             return ("Los conjuntos no son iguales")
     def __sub__(self, other):
+        self.__indice.sort()
+        other.__indice.sort()
         mo=None
         nuevo=[]
-        for i in range (len(self.__indice)):
-            band =False
-            for j in range (len (other.__indice)):
-                if (self.__indice[i]!=other.__indice[j]):
-                    band=True
-                else:
-                    mo=self.__indice[i]
-            if (band==True):
-                nuevo.append(self.__indice[i])
-        nuevo.remove(mo)
+        for objeto in self.__indice:
+            if objeto not in other.__indice:
+                nuevo.append(objeto)
         return (nuevo)
     def agregar (self,va):
         self.__indice.append(va)
