@@ -1,50 +1,52 @@
+from Numero import num
 class conjunto():
-    __numeros=[]
-    def init (self):
-        self.__numeros=[]
+    __indice=[]
+    def __init__(self):
+        self.__indice=[]
     def __add__(self, other):
-        nuevo=[]
-        new=None
-        nuevo.append(self.__numeros+other.__numeros)
-        for i in range (len(nuevo)):
-            for j in range (len(nuevo)):
-                if nuevo[i]==nuevo[j]:
-                    new=int(nuevo[i])
-                    nuevo.remove(new)
+        nuevo=self.__indice+other.__indice
+        for i in range (len(self.__indice)):
+            band=True
+            for j in range (len (other.__indice)):
+                if (self.__indice[i]==other.__indice[j]):
+                    mo=int(self.__indice[i])
+                    nuevo.remove(mo)
         return (nuevo)
     def agregar (self,va):
-        self.__numeros.append(va)
+        self.__indice.append(va)
 
     def __eq__(self, other):
         ban=False
         t=-1
-        if (len (self.__numeros)==len(other.__numeros)):
+        if (len (self.__indice)==len(other.__indice)):
             ban=True
         if (ban==True):
-            self.__numeros.sort()
-            other.__numeros.sort()
-            for i in range (len (self.__numeros)):
-                if self.__numeros[i]==other.__numeros[i]:
+            self.__indice.sort()
+            other.__indice.sort()
+            for i in range (len (self.__indice)):
+                if self.__indice[i]==other.__indice[i]:
                     t=1
                 else:
                     t=-1
-        if t==-1 or ban==False:
-            return ("Los conjuntos  no son iguales")
+        if t==1 and ban==True:
+            return ("Los conjuntos  son iguales")
         else:
-            return ("Los conjuntos son iguales")
+            return ("Los conjuntos no son iguales")
     def __sub__(self, other):
-        band=False
+        mo=None
         nuevo=[]
-        for i in range (len(self.__numeros)):
-            for j in range (len (other.__numeros)):
-                if (self.__numeros[i]!=other.__numeros[j]):
+        for i in range (len(self.__indice)):
+            band =False
+            for j in range (len (other.__indice)):
+                if (self.__indice[i]!=other.__indice[j]):
                     band=True
                 else:
-                    band=False
-            if band==True:
-                va=int(self.__numeros[i])
-                nuevo.append(va)
+                    mo=self.__indice[i]
+            if (band==True):
+                nuevo.append(self.__indice[i])
+        nuevo.remove(mo)
         return (nuevo)
-
-
-
+    def agregar (self,va):
+        self.__indice.append(va)
+    def __str__(self):
+        return("Valores:{}".format(self.__indice))

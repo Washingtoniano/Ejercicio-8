@@ -1,19 +1,22 @@
+from Numero import num
 from Conjunto import conjunto
 
 def test():
-    unconjunto=conjunto()
-    otroconjunto=conjunto()
-    unconjunto=[1,2,3]
-    otroconjunto=[3,4,5]
-    print ("Conjunto 1={}".format(unconjunto))
-    print ("Conjunto 2={}".format(otroconjunto))
+    conjunto1=conjunto()
+    conjunto1.agregar(1)
+    conjunto1.agregar(2)
+    conjunto1.agregar(3)
+
+    conjunto2=conjunto()
+    conjunto2.agregar(3)
+    conjunto2.agregar(4)
+    conjunto2.agregar(5)
+    print ("Conjunto 1={}".format(conjunto1))
+    print ("Conjunto 2={}".format(conjunto2))
     print ("opcion 1")
-    print (unconjunto+otroconjunto)
+    print (conjunto1 + conjunto2)
     print ("Opcion2")
-    print (unconjunto-otroconjunto)
+    print (conjunto1 - conjunto2)
     print ("Opcion3")
-    if (unconjunto==otroconjunto)==False:
-        print ("Los conjuntos no son iguales")
-    else:
-        print ("Los conjuntos son iguales")
+    print (conjunto1==conjunto2)
 

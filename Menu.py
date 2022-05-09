@@ -1,13 +1,14 @@
+from Numero import num
 from Conjunto import conjunto
 class menu():
-    __con=conjunto()
+    __con=None
     def __init__(self):
         self.__con=conjunto()
     def inicial(self):
         prim=conjunto()
         segun=conjunto()
         va= (input("Ingrese los valores del primero conjunto(para finalizar ingrese un valor que no sea entero)\n"))
-        while (va!=str or va!=float):
+        while (va!=str or va !=float):
             prim.agregar(va)
         va= (input("Ingrese los valores del segundo conjunto(para finalizar ingrese un valor que no sea entero)\n"))
         while (va!=str or va!=float):
